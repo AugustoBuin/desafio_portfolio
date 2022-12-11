@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@300;400;700&display=swap');
+
+/* Título */
+.font2_tit {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.body {
+    background-color: rgb(169, 169, 169);
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer {
+    background-color: cornflowerblue;
+    opacity: 85%;
+    font-size: larger;
+    padding: 2%;
+    text-align: center;
+    color: hsl(0, 0%, 0%);
+    bottom: auto;
+    position: static;
+    width: 100%;
+}
+
+Margem
+.marg {
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+/* Imagem arrendodada */
+.img_eu {
+    border-radius: 50%;
+    max-width: 15%;
+}
+ /* Imagem levemente arredondada */
+
+.img_Leu {
+    border-radius: 15%;
+    max-width: 25%;
+}
+
+/* Links de cor branca */
+.alink {
+    color: aliceblue;
+}
+
+.alink:link {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.alink:visited {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.alink:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.alink:active {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* Timeline */
+
+* {
+    box-sizing: border-box;
+}
+
+/* vertical ruler */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.containerA {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Círculos da Timeline*/
+.containerA::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.leftA {
+    left: 0;
+}
+
+.rightA {
+    left: 50%;
+}
+
+/* Setas da esquerda para a direita */
+.leftA::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Setas da direita para a esquerda */
+.rightA::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Círculos da direita */
+.rightA::after {
+    left: -16px;
+}
+
+/* Conteúdo */
+.conteudo {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+/* Media queries - Timeline < 600px wide */
+@media screen and (max-width: 600px) {
+
+    /* Timeline para a esquerda */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .containerA {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Direção correta das setas */
+    .containerA::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Círculos no mesmo lugar */
+    .leftA::after,
+    .rightA::after {
+        left: 15px;
+    }
+
+    /* Container da direita == Containers da esquerda */
+    .rightA {
+        left: 0%;
+    }
+}
